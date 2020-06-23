@@ -55,7 +55,8 @@ export default class HillChart extends EventEmitter {
     // Render the svg and center chart according to margins
     this.colorScheme = this.darkMode ? 'hill-chart-dark' : 'hill-chart-light';
     const defaultBg = this.darkMode ? '#2f3437' : '#ffffff';
-    const useDefaultBg = this.backgroundColor === true;
+    const bgColor = this.backgroundColor;
+    const useDefaultBg = bgColor === true || bgColor === undefined;
     const useTransparentBg = this.backgroundColor === false;
     const suppliedBgColor = useDefaultBg ? defaultBg : this.backgroundColor;
     this.backgroundColor = useTransparentBg ? 'transparent' : suppliedBgColor;
